@@ -7,11 +7,14 @@
     <title>Encriptador de Texto</title>
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 <body>
+    <header>
+        <img src="img/Vector.png" alt="logo alura" class="logo">
+    </header>
     <div class="container">
-        <img src="img/Vector.png" alt="" id="Vector">
         <div class="encriptar">
             <textarea name="texto"
             class="texto"  
@@ -39,15 +42,12 @@
         <img src="img/Muñeco.png" alt="" id="muñeco">
         <div class= 'mensaje-encriptado' id="mensaje-encriptado">
             <h2 id="titulo-mensaje">Ningún mensaje fue encontrado</h2>
-            <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
-                <!--<textarea name="mensaje" 
-                id="mensaje" 
-                cols="30" 
-                rows="10" 
-                class="mensaje"></textarea>\-->
+            <button class="copiar" id="copiar" type="button" onclick="copiar()">Copiar</button>
         </div>
     </div>
+    
 </div>
+<p>Creado por: Julianys Prias Estanga</p>
 </body>
 <script src="index.js"></script>
 </html>

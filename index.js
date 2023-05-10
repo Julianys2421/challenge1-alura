@@ -1,7 +1,6 @@
 function encriptar() {
     let texto = document.getElementById('texto').value;
     let tituloMensaje = document.getElementById('titulo-mensaje');
-    let parrafo = document.getElementById('parrafo');
     let muñeco = document.getElementById('muñeco');
 
     let textoCifrado = texto         
@@ -11,25 +10,26 @@ function encriptar() {
         .replace(/o/gi, 'ober')
         .replace(/u/gi, 'ufat');
 
+
     if (texto.length != 0) {
         document.getElementById('texto').value = textoCifrado;
         tituloMensaje.textContent = 'Texto encriptado con éxito';
-        parrafo.textContent = '';
-        muñeco.src = './img/encrptado.jpg';
+        muñeco.src = './img/encriptado.jpg';
     }else {
         muñeco.src = './img/muñeco.png';
         tituloMensaje.textContent = 'Ningún mensaje fue encontrado';
-        parrafo.textContent = 'Ingresa el texto que deseas encriptar o desencriptar';
-        alert('Debes ingresar algun texto');
+        swal('Upps!', 'Debes ingresar algun texto', 'warning');
 
 
     }
+
+    document.getElementById('copiar').style.display = 'show';
+    document.getElementById('copiar').style.display = 'inherit';
 }
 
 function desencriptar() {
     let texto = document.getElementById('texto').value;
     let tituloMensaje = document.getElementById('titulo-mensaje');
-    let parrafo = document.getElementById('parrafo');
     let muñeco = document.getElementById('muñeco');
 
     let textoCifrado = texto
@@ -42,13 +42,18 @@ function desencriptar() {
     if (texto.length != 0) {
         document.getElementById('texto').value = textoCifrado;
         tituloMensaje.textContent = 'Texto desencriptado con éxito';
-        parrafo.textContent = '';
-        muñeco.src = './img/desencrptado.jpg';
+        muñeco.src = './img/desencriptado.jpg';
     }else {
         muñeco.src = './img/muñeco.png';
         tituloMensaje.textContent = 'Ningún mensaje fue encontrado';
-        parrafo.textContent = 'Ingresa el texto que deseas encriptar o desencriptar';
-        alert('Debes ingresar algun texto');
+        swal('Upps!', 'Debes ingresar algun texto', 'warning');
 
     }
+}
+
+function copiar () {
+    var contenido = document.querySelector('#texto');
+    contenido.select();
+    document.execCommand('copy');
+    swal('Se copió!');
 }
